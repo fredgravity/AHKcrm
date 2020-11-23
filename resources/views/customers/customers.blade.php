@@ -25,8 +25,10 @@
 
 		    <div class="medium-7 ">
 		        <ul class="menu  cell align-right">
-					<li><input type="search" placeholder="Search" style="width: 400px;"></li>
-		      		<li><button type="button" class="button">Search</button></li>
+					<form action="/search_customers" method="post">
+						<li><input type="search" name="searchWord" placeholder="Search" style="width: 400px; "></li>
+			      		<li><button type="submit" name="search_btn" class="button" value="customers">Search</button></li> 
+			      	</form>
 		         </ul>
 		     </div>
 

@@ -25,8 +25,10 @@
 
 		    <div class="medium-7 ">
 		        <ul class="menu  cell align-right">
-					<li><input type="search" placeholder="Search" style="width: 400px;"></li>
-		      		<li><button type="button" class="button">Search</button></li>
+		        	<form action="/search_leads" method="post">
+						<li><input type="search" name="searchWord" placeholder="Search" style="width: 400px; "></li>
+			      		<li><button type="submit" name="search_btn" class="button" value="leads">Search</button></li> 
+			      	</form>
 		         </ul>
 		     </div>
 
@@ -36,8 +38,13 @@
 
 		
 			<div class="grid-x grid-padding-x cell" style="overflow-y: auto; max-height: 600px;">
+				@if(!count($customers))
+					<h5>No records available</h5>
+				@endif
+
 			@foreach( $customers as $customer)
 				<div class="small-12 medium-8 leads-card">
+					
 					
 					<h5><strong>{{ ucfirst($customer->company)}}</strong> </h5>
 					<h6><small>Phone: {{ $customer->phone}} </small> </h6>

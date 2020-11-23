@@ -89,7 +89,11 @@
 
 		['logout'		=>['GET','/logout', 'App\Controllers\AuthController@logout']] ,
 
-		// ['contact_us'	=>['GET','/contact_us', 'App\Controllers\IndexController@contactUs']] ,
+
+		//SEARCH
+		['search_leads'	=>['POST','/search_leads', 'App\Controllers\IndexController@searchLeads']] ,
+
+		['search_customers'	=>['POST','/search_customers', 'App\Controllers\IndexController@searchCustomers']],
 
 		// ['contact_us_2' =>['GET','/contact', 'App\Controllers\IndexController@contactUs']] ,
 	

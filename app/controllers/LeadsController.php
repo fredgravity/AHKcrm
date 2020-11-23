@@ -27,9 +27,20 @@ class LeadsController{
 	}
 
 
-	public function manageLeads(){
-        $this->customers = Customer::where('leads',1)->with( 'address_detail', 'lead')->orderBy('ID','DESC')->limit(7)->get(); 
-        $customers = $this->customers;
+	public function manageLeads($search=[]){
+        // pnd($search);   
+        if($search == []){
+            // pnd('ji');
+            $this->customers = Customer::where('leads',1)->with( 'address_detail', 'lead')->orderBy('ID','DESC')->limit(7)->get(); 
+            $customers = $this->customers;
+        }elseif (isset($search['post'])) {
+            // pnd('ji');
+            $this->customers = Customer::where('leads',1)->with( 'address_detail', 'lead')->orderBy('ID','DESC')->limit(7)->get(); 
+            $customers = $this->customers;
+        }else{
+            $customers = $search;
+        }
+        
         $searchByLetter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 

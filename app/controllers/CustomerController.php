@@ -22,11 +22,21 @@ class CustomerController{
 	}
 
 
-	public function manageCustomers(){
-		$this->customers = Customer::where('leads',0)->with( 'address_detail', 'lead')->orderBy('ID','DESC')->limit(7)->get(); 
-        $customers = $this->customers;
-        $searchByLetter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+	public function manageCustomers($search=[]){
+        // pnd($search == []);
+		if($search == []){
+            $this->customers = Customer::where('leads',0)->with( 'address_detail', 'lead')->orderBy('ID','DESC')->limit(7)->get(); 
+            $customers = $this->customers;
+        }elseif (isset($search['post'])) {
+             $this->customers = Customer::where('leads',0)->with( 'address_detail', 'lead')->orderBy('ID','DESC')->limit(7)->get(); 
+            $customers = $this->customers;
+        }else{
+            $customers = $search;
+        }
 
+
+        
+        $searchByLetter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 		return view('customers/customers', compact('customers', 'searchByLetter'));
 	}

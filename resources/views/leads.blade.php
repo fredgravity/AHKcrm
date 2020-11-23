@@ -17,8 +17,12 @@
 
 		    <div class="medium-6 ">
 		        <ul class="menu  cell align-right">
-					<li><input type="search" placeholder="Search"></li>
-		      		<li><button type="button" class="button">Search</button></li>
+		        	<form action="/search" method="post">
+		        		<input type="search" placeholder="Search" name="searchWord">
+		        		<!-- <input type="hidden" name="table" value="leads"> -->
+		      			<input type="submit" name="search-btn" class="button" value="leads">
+		        	</form>
+					
 		         </ul>
 		     </div>
 

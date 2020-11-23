@@ -5,6 +5,10 @@ namespace App\controllers;
 use App\classes\Redirect;
 use App\models\Customer;
 use App\models\Lead;
+use App\classes\Search;
+use App\classes\Request;
+use App\controllers\LeadsController;
+use App\controllers\CustomerController;
 
 class IndexController{
 
@@ -44,14 +48,42 @@ class IndexController{
 	}
 
 
-	// public function homeDashboardDetails(){
-	// 	$customers = Customer::where('leads', 0)->with('lead')->orderBy('id','desc')->limit(5)->get();
+	public static function searchLeads(){
 
-	// 	$leads = Customer::where('leads', 1)->with('lead')->orderBy('id','desc')->limit(5)->get();
+		if(Request::exist('post')){
 
-	// 	$contacts = Lead::orderBy('id', 'desc')->limit(5)->get();
-	// 	echo json_encode(compact('customers', 'leads', 'contacts'));exit();
-	// }
+			$req = Request::get('post');
+
+			$result = Search::searchQuery($req);
+
+			$leads = new LeadsController();
+			$leads->manageLeads($result);
+
+
+
+
+		}
+		
+	}
+
+
+	public static function searchCustomers(){
+
+		if(Request::exist('post')){
+
+			$req = Request::get('post');
+
+			$result = Search::searchQuery($req);
+
+			$customers = new CustomerController();
+			$customers->manageCustomers($result);
+
+
+
+
+		}
+		
+	}
 
 
 	public function contactUs($param){
