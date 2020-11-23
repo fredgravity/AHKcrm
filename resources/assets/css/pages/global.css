@@ -1,0 +1,153 @@
+
+
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Century Gothic';
+	
+}
+
+body{
+	background-color: ghostWhite;
+}
+
+
+fieldset{
+	padding: 1rem;
+}
+
+.welcome{
+	background-image: url('../../../../../public/images/bkg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-width: 100%;
+	min-height: 100%;
+	  /*display: block;*/
+	background-position: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	filter:blur(2px);
+	z-index: -1;	
+}
+
+.welcome-txt{
+	z-index: 2;
+	font-size: 5rem;
+	color: white;
+	border: 3px solid white;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+
+.welcome-login a{
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 5;
+	width: 150px;
+	border-radius: 10px;
+}
+
+.summary{
+
+}
+
+.my-small{
+	/*border: 1px solid blue;
+	border-radius: 25px;*/
+	margin: 1rem;
+	padding-left: 3px;
+}
+
+.my-small-card p{
+	padding: 0;
+	margin: 0;
+
+}
+
+.my-small-date h3{
+	font-size: 50px;
+}
+
+.home .icons{
+	font-size: 3rem !important;
+}
+
+.icon-text p{
+	font-size: 4rem !important;
+}
+
+.leads-card{
+	background-color: ghostWhite;
+	padding: 8px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+
+.leads-card h6, h5{
+	margin: 0;
+}
+
+.leads-card small{
+	color: black;
+}
+
+.details-profile ul{
+	list-style-type: none;
+	width: 100%;
+	margin-left: 0;
+
+}
+
+.details-profile ul li{
+	background-color: ghostWhite;
+	margin: 5px;
+	padding: 5px;
+
+}
+
+.details-profile ul li a{
+	text-decoration-style: none;
+	color: black;
+	display: block;
+	transition: 0.6s ease;
+	outline: none;
+}
+
+.details-profile ul li a:hover{
+	color: blue;
+	transition: 0.6s ease;
+	margin-left: 10px;
+}
+
+.contact-modal-field{
+	/*height: 30px;*/
+}
+
+.modal-header-underline{
+	border-bottom: 1px solid;
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
